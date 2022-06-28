@@ -2,7 +2,7 @@ class CreateListings < ActiveRecord::Migration[6.1]
   def change
     create_table :listings do |t|
       t.string :title
-      t.text :condition
+      t.integer :condition
       t.integer :price
       t.boolean :sold, default: false
       t.references :account, null: false, foreign_key: true
