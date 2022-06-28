@@ -2,7 +2,7 @@ class ListingsController < ApplicationController
   before_action :set_listing, only: %i[ show edit update destroy ]
   before_action :set_form_vars, only: %i[ new edit ]
   before_action :authenticate_account!, except: [:index, :show]
-  before_action :authorize_account, only: [:edit, :update, :destroy]
+  before_action :authorize_user, only: [:edit, :update, :destroy]
 
 
   # GET /listings or /listings.json
@@ -82,6 +82,6 @@ class ListingsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def listing_params
-      params.require(:listing).permit(:title, :description, :condition, :price, :sold, :account_id, :category_id)
+      params.require(:listing).permit(:title, :description, :condition, :price, :sold, :account_id, :category_id, :picture)
     end
 end
