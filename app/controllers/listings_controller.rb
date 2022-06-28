@@ -2,6 +2,7 @@ class ListingsController < ApplicationController
   before_action :set_listing, only: %i[ show edit update destroy ]
   before_action :set_form_vars, only: %i[ new edit ]
   before_action :authenticate_account!, except: [:index, :show]
+  before_action :authorize_account, only: [:edit, :update, :destroy]
 
 
   # GET /listings or /listings.json
@@ -70,6 +71,13 @@ class ListingsController < ApplicationController
     def set_form_vars
       @categories = Category.all
       @conditions = Listing.conditions.keys
+    end
+
+    def authorize_user
+      if @listing.account_id != current_account.id
+        flash[:alert] = "Not Authorised To Make Changes"
+        redirect_to listings_path
+      end
     end
 
     # Only allow a list of trusted parameters through.
