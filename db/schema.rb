@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_06_28_045816) do
+ActiveRecord::Schema.define(version: 2022_06_30_003421) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -85,8 +85,22 @@ ActiveRecord::Schema.define(version: 2022_06_28_045816) do
     t.index ["category_id"], name: "index_listings_on_category_id"
   end
 
+  create_table "orders", force: :cascade do |t|
+    t.bigint "listing_id", null: false
+    t.bigint "buyer_id", null: false
+    t.bigint "seller_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["buyer_id"], name: "index_orders_on_buyer_id"
+    t.index ["listing_id"], name: "index_orders_on_listing_id"
+    t.index ["seller_id"], name: "index_orders_on_seller_id"
+  end
+
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
   add_foreign_key "listings", "accounts"
   add_foreign_key "listings", "categories"
+  add_foreign_key "orders", "accounts", column: "buyer_id"
+  add_foreign_key "orders", "accounts", column: "seller_id"
+  add_foreign_key "orders", "listings"
 end
