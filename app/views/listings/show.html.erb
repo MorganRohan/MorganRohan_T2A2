@@ -8,7 +8,15 @@
   <% end %>
 </div>
 
-<%= button_to "Purchase", place_order_path%>
+<% if @listing.sold %>
+  <p>NOT AVAILABLE TO PURCHASE</p>
+<% elsif current_account && current_account.id == @listing.account_id %>
+  <p>CANNOT PURCHASE OWN ITEM</p>
+<% elsif current_account %>
+  <%= button_to "Purchase", place_order_path%>
+<% else %>
+  <p>PLEASE LOG IN OR MAKE AN ACCOUNT PURCHASE</p>
+<% end %>
 
 <p>
   <strong>Title:</strong>
