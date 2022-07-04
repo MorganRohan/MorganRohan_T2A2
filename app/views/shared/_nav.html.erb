@@ -4,6 +4,8 @@
 <span>
   <%= link_to "Bought Items", orders_bought_path, class: "button" %>
   <%= link_to "Sold Items", orders_sold_path, class: "button" %>
+  <%= render 'search/form' %>
+</span>
 
 <span style="float: right">
 <% if account_signed_in? %>
