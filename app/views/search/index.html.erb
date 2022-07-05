@@ -1,20 +1,22 @@
-<h1><%= pluralize(@listings.count, "Result") %></h1>
-<%= render 'search/form' %>
+<div class="container">
+  <div class="row">
+    <h1><%= pluralize(@listings.count, "Result") %></h1>
+    <%= render 'search/form' %>
 
-<div>
-    <table>
-        <thead>
-            <tr>
-            <th><%= sort_link(@query, :title, "Title", default_order: :asc) %></th>
-             </tr>
-        </thead>
+    <div>
+        <table class="u-full-width">
+            <thead>
+                <tr>
+                <th><%= sort_link(@query, :title, "Title", default_order: :asc) %></th>
+                </tr>
+            </thead>
 
-        <tbody>
-              <% @listings.each do |listing| %>
-            <tr>
-              <td><%= link_to listing.title, listing %></td>
-            </tr>
-                <% end %>
-        </tbody>
-    </table>
-</div>
+            <tbody>
+                  <% @listings.each do |listing| %>
+                <tr>
+                  <td><%= link_to listing.title, listing %></td>
+                </tr>
+                    <% end %>
+            </tbody>
+        </table>
+    </div>
