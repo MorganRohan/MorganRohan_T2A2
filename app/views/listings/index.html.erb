@@ -6,6 +6,7 @@
   <thead>
     <tr>
       <th>Title</th>
+      <th>Author</th>
       <th>Description</th>
       <th>Condition</th>
       <th>Price</th>
@@ -20,6 +21,7 @@
     <% @listings.each do |listing| %>
       <tr>
         <td><%= listing.title %></td>
+        <td><%= listing.author %></td>
         <td><%= listing.description %></td>
         <td><%= listing.condition %></td>
         <td><%= listing.price %></td>
