@@ -2,6 +2,12 @@ class PagesController < ApplicationController
   def home
   end
 
-  def success
+  def help
+  end
+
+  def guide
+  end
+
+  def sitemap
   end
 end

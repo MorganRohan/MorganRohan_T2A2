@@ -6,6 +6,7 @@
       <li><%= link_to "Bought Items", orders_bought_path, class: "button" %></li>
       <li><%= link_to "Sold Items", orders_sold_path, class: "button" %></li>
       <li><%= render 'search/form' %></li>
+      <li><%= link_to "Help", help_path, class: "button" %></li>
     </ul>
     <ul class="u-pull-right">
     <% if account_signed_in? %>

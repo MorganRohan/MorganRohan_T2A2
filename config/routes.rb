@@ -3,6 +3,9 @@ Rails.application.routes.draw do
   get 'orders/success'
   get 'orders/bought'
   get 'orders/sold'
+  get 'help', to: "pages#help", as: "help"
+  get 'help/guide', to: "pages#guide", as: "guide"
+  get 'help/sitemap', to: "pages#sitemap", as: "sitemap"
   resources :listings
   devise_for :accounts
   root 'pages#home'
