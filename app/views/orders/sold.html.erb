@@ -1,29 +1,34 @@
-<h1>Sold Items</h1>
+<div class="container">
+  <div class="row">
+    
+  <h1>Sold Items</h1>
 
 
-<table>
-  <thead>
-    <tr>
-      <th>Title</th>
-      <th>Description</th>
-      <th>Condition</th>
-      <th>Price</th>
-      <th>Seller</th>
-      <th>Category</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @sold_items.each do |item| %>
+  <table class="u-full-width">
+    <thead>
       <tr>
-        <td><%= item.listing.title %></td>
-        <td><%= item.listing.description %></td>
-        <td><%= item.listing.condition %></td>
-        <td><%= number_to_currency(item.listing.price) %></td>
-        <td><%= item.buyer.username %></td>
-        <td><%= item.listing.category.name %></td>
+        <th>Title</th>
+        <th>Author</th>
+        <th>Description</th>
+        <th>Condition</th>
+        <th>Price</th>
+        <th>Seller</th>
+        <th>Category</th>
+        <th colspan="3"></th>
       </tr>
-    <% end %>
-  </tbody>
-</table>
+    </thead>
+
+    <tbody>
+      <% @sold_items.each do |item| %>
+        <tr>
+          <td><%= item.listing.title %></td>
+          <td><%= item.listing.author %></td>
+          <td><%= item.listing.description %></td>
+          <td><%= item.listing.condition %></td>
+          <td><%= number_to_currency(item.listing.price) %></td>
+          <td><%= item.buyer.username %></td>
+          <td><%= item.listing.category.name %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>

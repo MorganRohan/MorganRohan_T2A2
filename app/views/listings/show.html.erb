@@ -40,22 +40,17 @@
 
 <p>
   <strong>Price:</strong>
-  <%= @listing.price %>
-</p>
-
-<p>
-  <strong>Sold:</strong>
-  <%= @listing.sold %>
+  <%= number_to_currency(@listing.price) %>
 </p>
 
 <p>
   <strong>Account:</strong>
-  <%= @listing.account_id %>
+  <%= @listing.account.username %>
 </p>
 
 <p>
   <strong>Category:</strong>
-  <%= @listing.category_id %>
+  <%= @listing.category.name %>
 </p>
 
 <% if current_account == @listing.account_id %>

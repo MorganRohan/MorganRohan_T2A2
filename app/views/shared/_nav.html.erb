@@ -1,17 +1,19 @@
-<%= link_to "🏡", root_path %>
-<%= link_to "Listings", listings_path, class: "button"  %>
-
-<span>
-  <%= link_to "Bought Items", orders_bought_path, class: "button" %>
-  <%= link_to "Sold Items", orders_sold_path, class: "button" %>
-  <%= render 'search/form' %>
-</span>
-
-<span style="float: right">
-<% if account_signed_in? %>
-    <%= link_to "Sign out", destroy_account_session_path, method: :delete, class: "button button-primary" %>
-<% else %>
-    <%= link_to "Sign up", new_account_registration_path, class: "button button-primary" %>
+<div class="container">
+  <div class="row">
+    <ul class="u-pull-left">
+      <li><%= link_to "🏡", root_path %></li>
+      <li><%= link_to "Listings", listings_path, class: "button"  %></li>
+      <li><%= link_to "Bought Items", orders_bought_path, class: "button" %></li>
+      <li><%= link_to "Sold Items", orders_sold_path, class: "button" %></li>
+      <li><%= render 'search/form' %></li>
+    </ul>
+    <ul class="u-pull-right">
+    <% if account_signed_in? %>
+      <li><%= link_to "Sign out", destroy_account_session_path, method: :delete, class: "button button-primary" %></li>
+    <% else %>
+      <li><%= link_to "Sign up", new_account_registration_path, class: "button button-primary" %></li>
     <%= link_to "Sign in", new_account_session_path, class: "button button-primary" %>
-<% end %>
-</span>
+    <% end %>
+    </ul>
+    <div class="u-cf"></div>
+</div>
