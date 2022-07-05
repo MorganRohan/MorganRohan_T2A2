@@ -22,7 +22,7 @@
           <td><%= item.listing.title %></td>
           <td><%= item.listing.author %></td>
           <td><%= item.listing.description %></td>
-          <td><%= item.listing.condition %></td>
+          <td><%= format_condition(item.listing.condition) %></td>
           <td><%= number_to_currency(item.listing.price) %></td>
           <td><%= item.seller.username %></td>
           <td><%= item.listing.category.name %></td>

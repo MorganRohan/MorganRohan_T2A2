@@ -25,7 +25,7 @@
             <td><%= listing.title %></td>
             <td><%= listing.author %></td>
             <td><%= listing.description %></td>
-            <td><%= listing.condition %></td>
+            <td><%= format_condition(listing) %></td>
             <td><%= number_to_currency(listing.price) %></td>
             <td><%= listing.sold %></td>
             <td><%= listing.account.username %></td>
