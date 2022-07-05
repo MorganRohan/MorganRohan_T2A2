@@ -27,7 +27,7 @@
             <td><%= listing.description %></td>
             <td><%= format_condition(listing.condition) %></td>
             <td><%= number_to_currency(listing.price) %></td>
-            <td><%= format_sold(listing.sold) %></td>
+            <td><%= listing.sold %></td>
             <td><%= listing.account.username %></td>
             <td><%= listing.category.name %></td>
             <td><%= link_to 'Show', listing %></td>
