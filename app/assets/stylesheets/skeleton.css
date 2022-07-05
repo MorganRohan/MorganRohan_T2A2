@@ -173,7 +173,7 @@ input[type="button"] {
   display: inline-block;
   height: 38px;
   padding: 0 5px;
-  color: white;
+  color: black;
   text-align: center;
   font-size: 13px;
   font-weight: 600;
@@ -237,6 +237,7 @@ select {
   height: 38px;
   padding: 6px 10px; /* The 6px vertically centers text on FF, ignored by Webkit */
   background-color: #fff;
+  color: black;
   border: 1px solid #D1D1D1;
   border-radius: 4px;
   box-shadow: none;
