@@ -7,7 +7,7 @@ module ListingsHelper
     end
 
     def format_sold(sold)
-        words = sold.map do |word|
+        words = sold.to_s.map do |word|
             word.capitalize
         end
     end
