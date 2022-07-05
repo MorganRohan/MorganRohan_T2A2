@@ -2,9 +2,9 @@
 
 <div>
   <% if @listing.picture.attached? %>
-    <%= image_tag @listing.picture, alt: @listing.title %>
+    <%= image_tag @listing.picture, alt: @listing.title, height: 300, width: 250 %>
   <% else %>
-    <%= image_tag "https://placekitten.com/200/300" , alt: @listing.title %>
+    <%= image_tag "https://placekitten.com/200/300" , alt: @listing.title, height: 300, width: 250 %>
   <% end %>
 </div>
 
@@ -35,7 +35,7 @@
 
 <p>
   <strong>Condition:</strong>
-  <%= format_condition(@listing.condition) %>
+  <%= @listing.condition %>
 </p>
 
 <p>
