@@ -1,10 +1,7 @@
-<% # Using Skeleton styling boilerplate, important to use div tags with relevant classes %>
 <p id="notice"><%= notice %></p>
 <div class="container">
 <div class="row">
   <div>
-    <% # Ruby logic to determine if image attached from listing form, otherwise use provided image %>
-    <% # Also establishes image height and width for compatibility with differing screen sizes %>
     <% if @listing.picture.attached? %>
       <%= image_tag @listing.picture, alt: @listing.title, height: 300, width: 250 %>
     <% else %>

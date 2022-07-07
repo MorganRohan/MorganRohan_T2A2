@@ -1,4 +1,3 @@
- <% # Using Skeleton styling boilerplate, important to use div tags with relevant classes %>
  <div class="container">
   <div class="row">
 
@@ -32,7 +31,6 @@
         <%= form.rich_text_area :description %>
       </div>
 
-      # Ruby tags used to write logic for displaying the condtion options in the defined format
       <div class="field">
         <% @conditions.each do |option| %>
         <%= form.label :condition, format_condition(option) %>
@@ -45,13 +43,11 @@
         <%= form.number_field :price %>
       </div>
 
-      # Ruby tags used to write logic for displaying the categories 
       <div class="field">
         <%= form.label :category_id %>
         <%= form.select :category_id, @categories.map {|c| [c.name, c.id]} %>
       </div>
 
-      # Ruby tags used to include the ability to upload image in defined formats
       <div class="field">
         <%= form.label :picture %>
         <%= form.file_field :picture, accept: "image/png,image/jpg,image/jpeg" %>

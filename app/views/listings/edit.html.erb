@@ -1,9 +1,7 @@
- # Using Skeleton styling boilerplate, important to use div tags with relevant classes
  <div class="container">
   <div class="row">
     <h1>Editing Listing</h1>
 
-    # DRY principle used; render form already created instead of repeating established code
     <%= render 'form', listing: @listing %>
 
     <%= link_to 'Show', @listing %> |
