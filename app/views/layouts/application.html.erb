@@ -11,13 +11,13 @@
   </head>
 
   <body>
-  # Render the shared navigation bar html at the top of the views
+
   <%= render 'shared/nav' %>
   <p class="notice"><%= notice %></p>
   <p class="alert"><%= alert %></p>
     <%= yield %>
 
-  # Console for development process
+
   <% if Rails.env.development? %>
     <% console %>
   <% end %>

@@ -7,7 +7,7 @@ class ListingsController < ApplicationController
   before_action :authenticate_account!, except: [:index, :show]
   before_action :authorize_user, only: [:edit, :update, :destroy]
 
-
+  #CRUD operations for listings managed by methods below
   # GET /listings or /listings.json
   def index
     @listings = Listing.all
