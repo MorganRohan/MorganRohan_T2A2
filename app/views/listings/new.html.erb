@@ -1,5 +1,11 @@
-<h1>New Listing</h1>
+# Using Skeleton styling boilerplate, important to use div tags with relevant classes
+<div class="container">
+  <div class="row">
+    <h1>New Listing</h1>
 
-<%= render 'form', listing: @listing %>
+    # DRY principle used; render form already created instead of repeating established code 
+    <%= render 'form', listing: @listing %>
 
-<%= link_to 'Back', listings_path %>
+    <%= link_to 'Back', listings_path %>
+  </div>
+</div>

@@ -1,6 +1,9 @@
 class ListingsController < ApplicationController
   before_action :set_listing, only: %i[ show edit update destroy place_order ]
   before_action :set_form_vars, only: %i[ new edit ]
+  # Create before_actions to determine authentication and authorisation of the user
+  # Only authenticated users can create, edit or destroy their own listings
+  # Purchasing of said listings is handled by the Orders Controller
   before_action :authenticate_account!, except: [:index, :show]
   before_action :authorize_user, only: [:edit, :update, :destroy]
 
@@ -62,6 +65,9 @@ class ListingsController < ApplicationController
     end
   end
 
+  # Define a method for placing an order, which creates the order object with the listing_id, buyer_id and seller_id
+  # Will also update sold status to prevent item being sold again (secondhand marketplace = unique items)
+  # Will also redirect to success path to show success view
   def place_order
     Order.create(
       listing_id: @listing.id,

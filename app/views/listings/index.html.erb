@@ -1,9 +1,11 @@
+# Using Skeleton styling boilerplate, important to use div tags with relevant classes
 <div class="container">
   <div class="row">
     <p id="notice"><%= notice %></p>
 
     <h1>Listings</h1>
 
+    # Define table to display listings including relevant data fields and information
     <table class="u-full-width">
       <thead>
         <tr>
@@ -31,6 +33,7 @@
             <td><%= listing.account.username %></td>
             <td><%= listing.category.name %></td>
             <td><%= link_to 'Show', listing %></td>
+            # Ruby logic to allow only authorised account (i.e. creator) to edit and delete functions
             <% if current_account && current_account.id == listing.account_id %>
               <td><%= link_to 'Edit', edit_listing_path(listing) %></td>
               <td><%= link_to 'Destroy', listing, method: :delete, data: { confirm: 'Are you sure?' } %></td>
