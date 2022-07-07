@@ -2,7 +2,6 @@ class Account < ApplicationRecord
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   # Note: only default devise modules used for this application
-  # 
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
